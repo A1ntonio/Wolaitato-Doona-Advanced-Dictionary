@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group >
+        <item android:title="Setting">
+            <menu>
+                <item
+                    android:id="@+id/setting"
+                    android:icon="@android:drawable/ic_menu_manage"
+                    android:title="Setting" />
+            </menu>
+        </item>
+    </group>
+    <group >
+        <item android:title="Help">
+            <menu>
+                <item
+                    android:id="@+id/help"
+                    android:icon="@android:drawable/ic_menu_help"
+                    android:title="How to memorize? (Tips)" />
+            </menu>
+        </item>
+    </group>
+
+    <item android:title="Communicate">
+        <menu>
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/ic_menu_share"
+                android:title="Share" />
+            <item
+                android:id="@+id/nav_rate"
+                android:icon="@android:drawable/btn_star"
+                android:title="Rate this app" />
+            <item
+                android:id="@+id/nav_about"
+                android:icon="@android:drawable/ic_dialog_info"
+                android:title="About Us" />
+            <item
+                android:id="@+id/nav_update"
+                android:icon="@android:drawable/stat_sys_download"
+                android:title="Check  Update" />
+            <item
+                android:id="@+id/nav_exit"
+                android:icon="@android:drawable/ic_menu_close_clear_cancel"
+                android:title="Exit" />
+            <item
+                android:id="@+id/nav_version"
+                android:title="version.1.0" />
+        </menu>
+    </item>
+
+
+</menu>

@@ -1,0 +1,205 @@
+package com.learn.wolaytegna.spokenwolaytic;
+
+import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.widget.ListView;
+import android.widget.Toast;
+
+import java.util.ArrayList;
+
+public class Main21Activity extends AppCompatActivity {
+
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main2);
+        setTitle("Personal Health & Common Health Problem");
+
+        ListView listView = findViewById(R.id.list_item);
+
+        Categories1 cata1 = new Categories1("EXPRESSION USED WHEN YOU MEET A SICK PERSON FOR THE FIRST TIME.\n\n\n-What is wrong with you?", "Waanadi tayshawu?", R.raw.record20210321194732);
+        Categories1 cata2 = new Categories1("What happened to you?", "Nena waatidee?", R.raw.record20210321194738);
+        Categories1 cata3 = new Categories1("What is the matter with you?", "Aybe lo'o gidenee?", R.raw.record20210321194744);
+        Categories1 cata4 = new Categories1("THEN, WHEN THE PATIENT TELLS YOU HIS PROBLEM AS FOLLOWS.\n\n\n-I have got a car accident.", "Tana kaamiya daafay gakkis.", R.raw.record20210321194751);
+        Categories1 cata5 = new Categories1("I have got a serious headache.", "Tana huuphee wolqqaama qoxxees.", R.raw.record20210321194758);
+        Categories1 cata6 = new Categories1("I have got a pain in my back.", "Tana zokkoy sakkees.", R.raw.record20210321194804);
+        Categories1 cata7 = new Categories1("I broke my leg/hand.", "Ta kushee/ta tohuwa meqqidi", R.raw.record20210321194944);
+        Categories1 cata8 = new Categories1("My left hand is swollen.", "Ta ushachcha kushee kixxidi", R.raw.record20210321194951);
+        Categories1 cata9 = new Categories1("I fell down and my leg is dislocated.", "Kunddada hanin ta tohoy meqqidi", R.raw.record20210321194958);
+        Categories1 cata10 = new Categories1("My fever is gone, but I still have a cough.", "Mishoy tana aggishin hanno gakkanawu qufe aggibeenna.", R.raw.record20210321195007);
+        Categories1 cata11 = new Categories1("I have got a stomach ache.", "Uloy tana sakkiidi de'ees.", R.raw.record20210321195015);
+        Categories1 cata12 = new Categories1("I have got a (high)fever.", "Keehippe tana michchiiddi de'ees.", R.raw.record20210321195022);
+        Categories1 cata13 = new Categories1("I have got a sharp pain in my...", "Hagan tana... keehippe sakkes.", R.raw.record20210321195030);
+        Categories1 cata14 = new Categories1("I have got a sever coughing.", "Aggenna qufee oyqqiis tana",R.raw.record20210321195038 );
+        Categories1 cata15 = new Categories1("I have got diarrhea.", "Tana uttisses.", R.raw.record20210321195046);
+        Categories1 cata16 = new Categories1("I have got the runs.", "Iita gusisses.", R.raw.record20210321195051);
+        Categories1 cata17 = new Categories1("I feel dizzy.", "Tana yiicoyees.", R.raw.record20210321195056);
+        Categories1 cata18 = new Categories1("THEN AFTER, YOU SAY\n\n\n- Oh, I am sorry to hear that!", "Hegaa siyoogee tana azzanttis.", R.raw.record20210321195102);
+        Categories1 cata19 = new Categories1("I wish you a speedy recover", "Eesuwan agganaadan hidootaa oottays.", R.raw.record20210321195118);
+        Categories1 cata20 = new Categories1("I hope you get better soon.", "Aynne baa nena eesuwan agganna.", R.raw.record20210321195128);
+        //error 22 and 23
+        Categories1 cata22 = new Categories1("I hope you fell better soon.", "Ta qoppiyo mala nena eesuwan aggana.", R.raw.record20210321195136);
+        Categories1 cata23 = new Categories1("I hope you get well again soon.", "Ta qoppiyo mala kaseegaattoo zaaretta lo'ana de'aasa.", R.raw.record20210321195210);
+        Categories1 cata24 = new Categories1("THE PATIENT RESPONDS\n\n- Thank you", "Galatays Inttena", R.raw.record20210321195223);
+        Categories1 cata25 = new Categories1("Thanks", "Taani galatays", R.raw.record20210321195229);
+        Categories1 cata26 = new Categories1("EXPRESSING GENERAL FEELINGS OF ILLNESS\n\n\n- I fell ill", "Tana sakkees", R.raw.record20210321195234);
+        Categories1 cata27 = new Categories1("I am sick", "Tana sakkees",  R.raw.record20210321195241);
+        Categories1 cata28 = new Categories1("I feel sick", "Keehippe sakkees",R.raw.record20210321195247);
+        Categories1 cata29 = new Categories1("feel lousy", "Loytti sakkees", R.raw.record20210321195252);
+        Categories1 cata30 = new Categories1("I feel awful", "Tana daafursses", R.raw.record20210321195257);
+        Categories1 cata31 = new Categories1("I feel rotten", "Tana iitees", R.raw.record20210321195303);
+        Categories1 cata32 = new Categories1("WHEN YOU FEEL LIKE VOMITING\n\n\n- I feel nauseous", "Tana ganddigaarssees", R.raw.record20210321195312);
+        Categories1 cata33 = new Categories1("I feel like throwing up", "Tana pude puggees", R.raw.record20210321195320);
+        Categories1 cata34 = new Categories1("I think I am going to be vomit", "Ta qoppiyoode tana cooshshanaanees.", R.raw.record20210321195327);
+        Categories1 cata35 = new Categories1("OBSERVING TO SOMEONE LOOKS DISORDERLY\n\n\n- You look tired.", "Ne daafurida misataasa.", R.raw.record20210321195336);
+        Categories1 cata36 = new Categories1("You look terrible", "Ne sakettaba misataasa.", R.raw.record20210321195346);
+        Categories1 cata37 = new Categories1("You look dreadful", "Ne iitiya asa misataasa.", R.raw.record20210321195357);
+        Categories1 cata38 = new Categories1("you look like hell", "Ne xumada xalahe misataasa.", R.raw.record20210321195403);
+        Categories1 cata39 = new Categories1("INQUIRING SOMEONE'S HEALTH\n\n\n- Are you feeling ok?", "Niyo ha'i lo'o gidennee?", R.raw.record20210321195410);
+        Categories1 cata40 = new Categories1("Do you feel all right?", "Niyo payetettay siyettii?",  R.raw.record20210321195415);
+        Categories1 cata41 = new Categories1("Are you feeling good?", "Niyo lo'otettay siyettii?",R.raw.record20210321195420);
+        Categories1 cata42 = new Categories1("How are you feeling today?", "Ne hachchi ay malee?", R.raw.record20210321195425);
+        Categories1 cata43 = new Categories1("Are you doing better today?", "Hachchi lo'o oottay?", R.raw.record20210321195432);
+        Categories1 cata44 = new Categories1("Are you all right?", "Muleera lo'idee niyo?", R.raw.record20210321195439);
+        Categories1 cata45 = new Categories1("EXPLAINING YOUR HEALTH IS IMPROVING\n\n\n- I am getting better", "Tawu lo'iidi de'ees.", R.raw.record20210321195445);
+        Categories1 cata46 = new Categories1("I am better than I was", "Tawu kaseppe lo'o", R.raw.record20210321195452);
+        Categories1 cata47 = new Categories1("I am getting over it", "Tawu lo'iddi dees.", R.raw.record20210321195456);
+        Categories1 cata48 = new Categories1("I am getting back to normal", "Tawu ba sohuwa simmiiddi de'ees.", R.raw.record20210321195507);
+        Categories1 cata49 = new Categories1("CARE TO SICK PERSON\n\n\n- Want some panadole?", "Ne huuphiyawu xale koyyadii?", R.raw.record20210321195518);
+        Categories1 cata50 = new Categories1("Should I call a doctor?", "Dottoriya niyo xeesoo?", R.raw.record20210321195523);
+        Categories1 cata51 = new Categories1("Can I get you a glass of water?", "Niyo issi burccukko haatta demmoo?",R.raw.record20210321195529 );
+        Categories1 cata52 = new Categories1("Want to lie down?", "Zin'ana koyyay?", R.raw.record20210321195535);
+        Categories1 cata53 = new Categories1("Should I call for the nurse?", "Aakimiya niyo xeesoo?", R.raw.record20210321195541);
+        Categories1 cata54 = new Categories1("ASKING A DOCTOR ABOUT THE PROBLEM\n\n\n- Can it be cured?", "Waani paxii?", R.raw.record20210321195545);
+        Categories1 cata55 = new Categories1("Is it curable?", "Waani paxiyaabee?", R.raw.record20210321195550);
+        Categories1 cata56 = new Categories1("Is it serious?", "Hagee keehi iitee?", R.raw.record20210321195558);
+        Categories1 cata57 = new Categories1("Is it treatable?", "Aakamishin paxiyabee?",  R.raw.record20210321195605);
+        //error58
+        Categories1 cata58 = new Categories1("Do I need surgery?", "Waatii hagan tana zin'issii?", R.raw.record20210321195611);
+
+        ArrayList<Categories1> list = new ArrayList<>();
+        list.add(cata1);
+        list.add(cata2);
+        list.add(cata3);
+        list.add(cata4);
+        list.add(cata5);
+        list.add(cata6);
+        list.add(cata7);
+        list.add(cata8);
+        list.add(cata9);
+        list.add(cata10);
+        list.add(cata11);
+        list.add(cata12);
+        list.add(cata13);
+        list.add(cata14);
+        list.add(cata15);
+        list.add(cata16);
+        list.add(cata17);
+        list.add(cata18);
+        list.add(cata19);
+        list.add(cata20);
+        list.add(cata22);
+        list.add(cata23);
+        list.add(cata24);
+        list.add(cata25);
+        list.add(cata26);
+        list.add(cata27);
+        list.add(cata28);
+        list.add(cata29);
+        list.add(cata30);
+        list.add(cata31);
+        list.add(cata32);
+        list.add(cata33);
+        list.add(cata34);
+        list.add(cata35);
+        list.add(cata36);
+        list.add(cata37);
+        list.add(cata38);
+        list.add(cata39);
+        list.add(cata40);
+        list.add(cata41);
+        list.add(cata42);
+        list.add(cata43);
+        list.add(cata44);
+        list.add(cata45);
+        list.add(cata46);
+        list.add(cata47);
+        list.add(cata48);
+        list.add(cata49);
+        list.add(cata50);
+        list.add(cata51);
+        list.add(cata52);
+        list.add(cata53);
+        list.add(cata54);
+        list.add(cata55);
+        list.add(cata56);
+        list.add(cata57);
+        list.add(cata58);
+
+        CategoriesListAdapter2 adapter = new CategoriesListAdapter2(this, R.layout.custom_layout2, list);
+        listView.setAdapter(adapter);
+
+        int num = new DBAdarter(Main21Activity.this).nof_alldata();
+        Toast.makeText(Main21Activity.this, String.valueOf(num), Toast.LENGTH_SHORT).show();
+        if (num == 457){
+            new DBAdarter(Main21Activity.this).saveAllData(cata1);
+            new DBAdarter(Main21Activity.this).saveAllData(cata2);
+            new DBAdarter(Main21Activity.this).saveAllData(cata3);
+            new DBAdarter(Main21Activity.this).saveAllData(cata4);
+            new DBAdarter(Main21Activity.this).saveAllData(cata5);
+            new DBAdarter(Main21Activity.this).saveAllData(cata6);
+            new DBAdarter(Main21Activity.this).saveAllData(cata7);
+            new DBAdarter(Main21Activity.this).saveAllData(cata8);
+            new DBAdarter(Main21Activity.this).saveAllData(cata9);
+            new DBAdarter(Main21Activity.this).saveAllData(cata10);
+            new DBAdarter(Main21Activity.this).saveAllData(cata11);
+            new DBAdarter(Main21Activity.this).saveAllData(cata12);
+            new DBAdarter(Main21Activity.this).saveAllData(cata13);
+            new DBAdarter(Main21Activity.this).saveAllData(cata14);
+            new DBAdarter(Main21Activity.this).saveAllData(cata15);
+            new DBAdarter(Main21Activity.this).saveAllData(cata16);
+            new DBAdarter(Main21Activity.this).saveAllData(cata17);
+            new DBAdarter(Main21Activity.this).saveAllData(cata18);
+            new DBAdarter(Main21Activity.this).saveAllData(cata19);
+            new DBAdarter(Main21Activity.this).saveAllData(cata20);
+            new DBAdarter(Main21Activity.this).saveAllData(cata22);
+            new DBAdarter(Main21Activity.this).saveAllData(cata23);
+            new DBAdarter(Main21Activity.this).saveAllData(cata24);
+            new DBAdarter(Main21Activity.this).saveAllData(cata25);
+            new DBAdarter(Main21Activity.this).saveAllData(cata26);
+            new DBAdarter(Main21Activity.this).saveAllData(cata27);
+            new DBAdarter(Main21Activity.this).saveAllData(cata28);
+            new DBAdarter(Main21Activity.this).saveAllData(cata29);
+            new DBAdarter(Main21Activity.this).saveAllData(cata30);
+            new DBAdarter(Main21Activity.this).saveAllData(cata31);
+            new DBAdarter(Main21Activity.this).saveAllData(cata32);
+            new DBAdarter(Main21Activity.this).saveAllData(cata33);
+            new DBAdarter(Main21Activity.this).saveAllData(cata34);
+            new DBAdarter(Main21Activity.this).saveAllData(cata35);
+            new DBAdarter(Main21Activity.this).saveAllData(cata36);
+            new DBAdarter(Main21Activity.this).saveAllData(cata37);
+            new DBAdarter(Main21Activity.this).saveAllData(cata38);
+            new DBAdarter(Main21Activity.this).saveAllData(cata39);
+            new DBAdarter(Main21Activity.this).saveAllData(cata40);
+            new DBAdarter(Main21Activity.this).saveAllData(cata41);
+            new DBAdarter(Main21Activity.this).saveAllData(cata42);
+            new DBAdarter(Main21Activity.this).saveAllData(cata43);
+            new DBAdarter(Main21Activity.this).saveAllData(cata44);
+            new DBAdarter(Main21Activity.this).saveAllData(cata45);
+            new DBAdarter(Main21Activity.this).saveAllData(cata46);
+            new DBAdarter(Main21Activity.this).saveAllData(cata47);
+            new DBAdarter(Main21Activity.this).saveAllData(cata48);
+            new DBAdarter(Main21Activity.this).saveAllData(cata49);
+            new DBAdarter(Main21Activity.this).saveAllData(cata50);
+            new DBAdarter(Main21Activity.this).saveAllData(cata51);
+            new DBAdarter(Main21Activity.this).saveAllData(cata52);
+            new DBAdarter(Main21Activity.this).saveAllData(cata53);
+            new DBAdarter(Main21Activity.this).saveAllData(cata54);
+            new DBAdarter(Main21Activity.this).saveAllData(cata55);
+            new DBAdarter(Main21Activity.this).saveAllData(cata56);
+            new DBAdarter(Main21Activity.this).saveAllData(cata57);
+            new DBAdarter(Main21Activity.this).saveAllData(cata58);
+        }
+    }
+}
